@@ -1,0 +1,21 @@
+.cardframe {
+  width: 250px;
+  height: fit-content;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  background-color: white;
+  box-shadow: 5px 5px 10px black;
+  font-size: 1.4rem;
+  padding: 10px;
+}
+
+.label {
+  font-weight:bold;
+  text-align: right;
+}
+
+.button {
+  
+}
