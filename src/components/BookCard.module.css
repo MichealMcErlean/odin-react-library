@@ -1,10 +1,11 @@
 .cardframe {
-  width: 250px;
+  width: auto;
   height: fit-content;
   display:grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 60px 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   gap: 10px;
+  align-items: center;
   background-color: white;
   box-shadow: 5px 5px 10px black;
   font-size: 1.4rem;
@@ -17,5 +18,14 @@
 }
 
 .button {
-  
+  background-color:midnightblue;
+  color: white;
+  border-radius: 5px;
+  height: 100%;
+}
+
+.button:active {
+  outline: 2px solid midnightblue;
+  background-color: antiquewhite;
+  color: midnightblue;
 }

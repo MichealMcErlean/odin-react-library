@@ -1,0 +1,23 @@
+.form {
+  margin: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  color:antiquewhite;
+  text-align: center;
+  gap: 10px;
+}
+
+.fieldset {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.form input {
+  margin: 10px;
+}
+
+.form button {
+  padding: 10px;
+  font-size: 1.8rem;
+  border-radius: 15px;;
+}

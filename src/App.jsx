@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Book from './scripts/book';
 import BookCard from './components/BookCard';
+import Form from './components/Form';
 
 function App() {
 
@@ -15,7 +16,25 @@ function App() {
   }, []);
 
   function handleRemove(e, delBook) {
-    console.log(delBook);
+    const listcopy = [...bookList];
+    const newlist = listcopy.filter(book => (
+      (book.title != delBook.title) &&
+      (book.author != delBook.author)
+    ));
+    setBookList(prev => newlist);
+  }
+
+  function handleAddBook(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const title = form.elements.title.value;
+    const author = form.elements.author.value;
+    const pages = form.elements.pages.value;
+    const read = form.elements.read.value;
+
+    const newBook = new Book(title, author, pages, read);
+    setBookList(prev => [...prev, newBook]);
   }
 
   return (
@@ -26,14 +45,16 @@ function App() {
         <h3>Powered by React</h3>
       </header>
       <aside>
-        <p>Here's where the form goes</p>
+        <Form 
+          onSubmit={handleAddBook}
+        />
       </aside>
       <article>
         {bookList.map((book, index) => (
           <BookCard 
             key={`${index}-${book.pages}`}
             book={book}
-            onClick={(e) => handleRemove(book)}
+            onClick={(e) => handleRemove(e, book)}
           />
         ))}
       </article>
